@@ -74,6 +74,7 @@ export class LinkedList<T> {
 
     const node = curr.next;
     curr.next = null;
+    this.size--;
 
     return node.value;
   };
