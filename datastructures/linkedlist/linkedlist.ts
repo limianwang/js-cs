@@ -1,11 +1,7 @@
-
-export type TLinkedListNode<T> = {
-  next?: TLinkedListNode<T> | null;
-  value: T;
-};
+import { TListNode } from '../listnode/listnode';
 
 export class LinkedList<T> {
-  private head: TLinkedListNode<T> | null;
+  private head: TListNode<T> | null;
   private size: number;
 
   constructor() {
@@ -16,7 +12,7 @@ export class LinkedList<T> {
   addToHead = (item: T) => {
     const node = {
       value: item
-    } as TLinkedListNode<T>;
+    } as TListNode<T>;
 
     if (this.head !== undefined) {
       node.next = this.head;
