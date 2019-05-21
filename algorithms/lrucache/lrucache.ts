@@ -44,20 +44,19 @@ export class LRUCache<K, T> {
     }
   }
 
-  add = (node: TDoublyListNode<K, T>) => {
+  private add(node: TDoublyListNode<K, T>) {
     const prev = this.tail.prev;
     this.tail.prev = node;
     node.next = this.tail;
     node.prev = prev;
     prev.next = node;
-  };
+  }
 
-  remove = (node: TDoublyListNode<K, T>) => {
+  private remove(node: TDoublyListNode<K, T>) {
     const prev = node.prev;
     const next = node.next;
 
     prev.next = next;
     next.prev = prev;
-  };
-
+  }
 }
